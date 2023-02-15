@@ -18,6 +18,7 @@ public class Scripture
         _chapter = chapter;
         _verses = verses;
     }
+    
     public string GetReference()
     { // return the Reference of the scripture and not the Text
         if (_verses.Count == 1)

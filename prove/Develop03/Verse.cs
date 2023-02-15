@@ -9,7 +9,7 @@ public class Verse
     // Declare getter and setter
     public int VerseNumber { get { return _verseNumber; } }
     public string Text { get { return _text; } }
-    
+
     // Contructor for if there more than 2 verses
     public Verse(int verseNumber, string text)
     {

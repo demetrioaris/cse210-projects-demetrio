@@ -1,9 +1,10 @@
 using System.Text;
 
+
 public class Reference 
 {
     private List<Scripture> scriptures;
-    
+
     public Reference()
     { // Set the scriptures
         scriptures = new List<Scripture>
@@ -30,6 +31,7 @@ public class Reference
     {
         return scriptures;
     }
+    
     public void DisplayScriptures()
     {// return a list with scriptures
      // 1) scripture...

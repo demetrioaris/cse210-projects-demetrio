@@ -8,6 +8,7 @@ class Program
         //Console.WriteLine("Hello Learning03 World!");
         Setting start = new Setting();
         start.RunSetting();
+        
     /*
         I create 5 classes
         for the verse,  scripture and  for the reference,

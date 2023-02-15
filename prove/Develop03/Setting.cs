@@ -3,7 +3,6 @@ using System.Text.RegularExpressions;
 
 public class Setting
 {
-    
     public void ListOptions()
     {
         string[] listOption = 
@@ -68,8 +67,6 @@ public class Setting
             }
         } while (choose != "3");
     }
-
-    
 }
 
 
