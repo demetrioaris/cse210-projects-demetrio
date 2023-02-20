@@ -13,54 +13,60 @@ public class Listing : Activity
         "Listening",
         "This Activity will help you reflect on the good things in your life by having you list as many things ass you can in a certain area."
     ){}
-    public Listing(int duration) : base(duration)
-    {}
+    // public Listing(int duration) : base(duration)
+    // {}
     
-    public List<string> PromptListenList{ get { return _promptListListen;}}
-    public string Response{ get { return _response;}}
-    public List<string> ResponseList{ get { return _listResponse;}}
+    // public List<string> PromptListenList{ get { return _promptListListen;}}
+    // public string Response{ get { return _response;}}
+    // public List<string> ResponseList{ get { return _listResponse;}}
 
 
     public string GetRandomPromptListen()
     {
-        //Random rnd = new Random();
+        // From the list return one prompt as string
         _promptListListen = new List<string>
         {
-            "1", "2"
+            "Who are people that you appreciate?",
+            "What are personal strengths of yours?",
+            "Who are people that you have helped this week?",
+            "When have you felt the Holy Ghost this month?",
+            "Who are some of your personal heroes?",
         };
+
+        // Count how many prompt are in the list and get one random by index 
         int i = rnd.Next(_promptListListen.Count);
         string rndPrompt = _promptListListen[i];
-
         return rndPrompt;
     }
 
     public void DisplayPrompt(string prompt)
-    {
-        Console.WriteLine($"List as many response you can to the following prompt:\n\n--- {prompt} ---");
-        Console.WriteLine();
+    {   
+        // Recieve a prompt as string
+        // and display a msgs
+        Console.WriteLine($"List as many response you can to the following prompt:\n\n--- {prompt} ---\n\n");
         Console.Write("You may begin in: ");
+        Thread.Sleep(3000);
         DisplayCountdown();
         Console.WriteLine(); // keep the countdown in the same line
     }
-    public void StoreListResponse()
-    {
-        _listResponse = DisplayInputResponse();
-        int listCount = _listResponse.Count;
-        Console.WriteLine($"You listed {listCount} items!");
 
-    }
-
-    List<string> DisplayInputResponse() 
+    public List<string> GetResponse()
     {
-        //Console.WriteLine("Get Duration " + base.Duration);
-        //_listResponse = DisplayInputResponse();
-        //List<string> lista = new List<string>();
-        System.Timers.Timer temp = new System.Timers.Timer(Duration * 1000);
-        temp.AutoReset = false;
-        
-        // Console.Write("> ");
-        // _response = Console.ReadLine();
-        temp.Start();
+
+        _listResponse = new List<string>();
+        ManualResetEvent mre = new ManualResetEvent(false); //  to signal when the duration-second timeout has elapsed.
+
+        //Console.WriteLine("Enter responses (20 second timeout):");
+        int num = Duration * 1000;
+        Console.WriteLine(Duration);
+        System.Timers.Timer timer = new System.Timers.Timer(num); // it is milisecends
+        timer.Elapsed += (sender, e) => 
+        { 
+            //Console.WriteLine("\nTimeout expired!");
+            mre.Set();
+        };
+        timer.AutoReset = false;
+        timer.Start();
 
         while (true)
         {
@@ -68,34 +74,56 @@ public class Listing : Activity
             _response = Console.ReadLine();
 
             if (string.IsNullOrEmpty(_response))
-            {   
-                
+            {
+                Console.WriteLine("Response cannot be empty.");
+            }
+            else
+            {
+                _listResponse.Add(_response);
+                //Console.WriteLine($"'{response}' added to list.");
+
+                if (timer.Enabled)
+                {
+                    timer.Stop();
+                    timer.Start();
+                }
+            }
+
+            if (mre.WaitOne(0))
+            {
                 break;
             }
-            Console.WriteLine("> " + _response);
-            _listResponse.Add(_response);
         }
 
-        temp.Stop();
-        temp.Dispose();
+        timer.Stop();
         return _listResponse;
+    }
+        public void StoreListResponse()
+    {
+        List<string> _listResponse = GetResponse(); // Here we start the GetResponse method
+        // Count how many response are in the list and display the total
+        int listCount = _listResponse.Count;
+        Console.WriteLine();
+        Console.WriteLine($"You listed {listCount} items!\n");
     }
 
     public void Start()
     {
+        // Start the activity Listing
         Console.Clear();
-        base.GetStartMsg();
+        GetStartMsg();
         InputDuration();
 
         Console.Clear();
-        Console.WriteLine("Get ready...");
+        GetReadyMsg();
         DisplaySpinner();
         Console.WriteLine();
 
         DisplayPrompt(GetRandomPromptListen());
-        DisplayInputResponse();
+        //DisplayInputResponse(); Here was my error, why display the get response twice
         Console.WriteLine();
+        StoreListResponse();
 
-        base.GetEndtMsg();
+        GetEndtMsg();
     }   
 }

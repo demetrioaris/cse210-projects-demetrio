@@ -1,4 +1,3 @@
-using System;
 
 class Program
 {
@@ -7,6 +6,7 @@ class Program
         //Console.WriteLine("Hello Develop04 World!");
         MenuActivity run = new MenuActivity();
         run.DisplayOptionActivity();
+        
         /*
             I declare the base class with the name Activity, and 3 derivates classes, and the aditional class Menu
             My derivates class are:
@@ -23,21 +23,18 @@ class Program
             
             Addinional methods to just display, DisplaySpinner() and DisplayCountdown() return void
 
-            
+            For the spinner I can create a variable time to display diferent period of time
+         */
+         // Activity.DisplaySpinner();
+        // Activity.DisplayCountdown();
 
+        // Breathing breath = new Breathing();
+        // breath.Start();
 
+        // Reflecting reflect = new Reflecting();
+        // reflect.Start();
 
-            For the spinner I can create a variable time to display diferent period of time*/
+        // Listing listen = new Listing();
+        // listen.Start();
     }
 }
-// Activity.DisplaySpinner();
-// Activity.DisplayCountdown();
-
-// Breathing breath = new Breathing();
-// breath.Start();
-
-// Reflecting reflect = new Reflecting();
-// reflect.Start();
-
-// Listing listen = new Listing();
-// listen.Start();

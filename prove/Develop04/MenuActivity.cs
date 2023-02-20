@@ -24,8 +24,12 @@ public class MenuActivity
     {
         string choose = "";
         do
-        {
+        {   
             Console.Clear();
+            Console.WriteLine("\n");
+            Activity.Loading();
+            Console.Clear();
+
             MenuOptionsActivity();
             Console.WriteLine("Select a choice from the menu:");
             choose = Console.ReadLine();
@@ -54,8 +58,7 @@ public class MenuActivity
 
                 default:
                     Console.Clear();
-                    Console.WriteLine("This is not a valid option");
-                    Console.WriteLine(" ");
+                    Console.WriteLine("This is not a valid option\n");
                     Console.WriteLine("Press Enter to return the List of option");
                     Console.ReadLine();
                     DisplayOptionActivity();

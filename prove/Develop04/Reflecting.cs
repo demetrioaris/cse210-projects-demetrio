@@ -13,33 +13,43 @@ public class Reflecting : Activity
         "This activity will help you reflect on times in your life when you have shown strenght and resilience. This Will help you recognize the power you have and how you can use it in other aspects of your life."  
     ){}
 
-    public Reflecting(int duration) : base(duration)
-    {}
+    // public Reflecting(int duration) : base(duration)
+    // {}
 
-    public List<string> PromptReflectList{ get { return _promptListReflect;}}
-    public List<string> ReflectingQuestionList{ get { return _reflectingQuestionList;}}
+    // public List<string> PromptReflectList{ get { return _promptListReflect;}}
+    // public List<string> ReflectingQuestionList{ get { return _reflectingQuestionList;}}
 
     public string GetRandomPromptReflect()
     {
-        //Random rnd = new Random();
+        // From the list return one prompt as string
         _promptListReflect = new List<string>
         {
-            "1", "2"
+            "Think of a time when you stood up for someone else.",
+            "Think of a time when you did something really difficult.",
+            "Think of a time when you helped someone in need.",
+            "Think of a time when you did something truly selfless."
         };
+
+        // Count how many prompt are in the list a get one random by index 
         int i = rnd.Next(_promptListReflect.Count);
         string rndPrompt = _promptListReflect[i];
-
         return rndPrompt;
     }
 
     public void DisplayPrompt(string prompt)
     {
+        // Recieve a prompt as string
+        // and display a msgs
         Console.WriteLine($"Consider the following prompt:\n\n--- {prompt} ---");
-        Console.WriteLine("\nWhen you have something in mind, press enter to continue");
+        Console.WriteLine("\nWhen you have something in mind, press enter to continue\n");
+        Thread.Sleep(3000);
         Console.ReadLine();
-        Console.WriteLine();
-        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
+        DisplaySpinner();
+
+        // Console.WriteLine();
+        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.\n");
         Console.Write("You may begin in: ");
+        Thread.Sleep(3000);
         DisplayCountdown();
         Console.WriteLine();
         Console.Clear();
@@ -47,21 +57,29 @@ public class Reflecting : Activity
 
     public List<string> GetRandomQuestion()
     {
-        //Random rnd = new Random();
+        // From the list return one prompt as string
         _reflectingQuestionList = new List<string>() 
         { 
-            "uno", "dos", "tres", "cuatro", "cinco", "seis", 
-            "siete", "ocho", "nueve", "diez" 
+            "Why was this experience meaningful to you?",
+            "Have you ever done anything like this before?",
+            "How did you get started?",
+            "How did you feel when it was complete?",
+            "What made this time different than other times when you were not as successful?",
+            "What is your favorite thing about this experience?",
+            "What could you learn from this experience that applies to other situations?",
+            "What did you learn about yourself through this experience?",
+            "How can you keep this experience in mind in the future?"
         };
 
+        // in base of the duration return questions as list
         int quantity = 0;
         List<string> questionsSelected = new List<string>();
 
-        if (base.Duration >=5 && base.Duration <=15)
+        if (base.Duration >=5 && base.Duration <=30)
         {
             quantity = 2;
         }
-        else if (base.Duration > 15) //&& base.Duration >=30
+        else if (base.Duration > 30) //&& base.Duration >=30
         {
             quantity = 3;
         }
@@ -86,12 +104,14 @@ public class Reflecting : Activity
 
     public void DisplayQuestions(List<string> Questions)
     {
+        // Recieve a question list and display by delay each one by behind
+        // in base of the duration divide the duration by list of questions
         int delay = 0;
-        if (base.Duration >=5 && base.Duration <=15)
+        if (base.Duration >=5 && base.Duration <=30)
         {
             delay = base.Duration/2;
         }
-        else if (base.Duration > 15) //&& base.Duration >=30
+        else if (base.Duration > 30) //&& base.Duration >=30
         {
             delay = base.Duration/3;
         }
@@ -100,31 +120,32 @@ public class Reflecting : Activity
             delay = base.Duration;
         }
 
-        Console.WriteLine("Get Duration " + Duration);
+        //Console.WriteLine("Get Duration " + Duration);
+        //DisplaySpinner();
         foreach (string question in Questions)
         {
             Console.Write($"> {question} ");
-            DisplaySpinner();
-            Thread.Sleep(delay);
+            Thread.Sleep(delay * 1000);
             Console.WriteLine();
         }
     }
 
     public void Start()
     {
+        // Start the activity Reflect
         Console.Clear();
-        base.GetStartMsg(); // Store contructor with the name and description
+        GetStartMsg();
         InputDuration();
 
         Console.Clear();
-        Console.WriteLine("Get ready...");
+        GetReadyMsg();
         DisplaySpinner();
-        Console.WriteLine();
+        // 
 
         DisplayPrompt(GetRandomPromptReflect());
         DisplayQuestions(GetRandomQuestion());
         Console.WriteLine();
 
-        base.GetEndtMsg();
+        GetEndtMsg();
     }
 }
