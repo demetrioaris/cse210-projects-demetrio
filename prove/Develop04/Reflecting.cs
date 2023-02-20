@@ -57,7 +57,7 @@ public class Reflecting : Activity
 
     public List<string> GetRandomQuestion()
     {
-        // From the list return one prompt as string
+        // From the list return questions by the duration
         _reflectingQuestionList = new List<string>() 
         { 
             "Why was this experience meaningful to you?",
@@ -102,27 +102,27 @@ public class Reflecting : Activity
         return questionsSelected;
     }
 
-    public void DisplayQuestions(List<string> Questions)
+    public void DisplayQuestions(List<string> questions)
     {
         // Recieve a question list and display by delay each one by behind
         // in base of the duration divide the duration by list of questions
         int delay = 0;
-        if (base.Duration >=5 && base.Duration <=30)
+        if (base.Duration >=5 && Duration <=30)
         {
-            delay = base.Duration/2;
+            delay = Duration/2;
         }
-        else if (base.Duration > 30) //&& base.Duration >=30
+        else if (Duration > 30) //&& base.Duration >=30
         {
-            delay = base.Duration/3;
+            delay = Duration/3;
         }
         else
         {
-            delay = base.Duration;
+            delay = Duration;
         }
 
         //Console.WriteLine("Get Duration " + Duration);
         //DisplaySpinner();
-        foreach (string question in Questions)
+        foreach (string question in questions)
         {
             Console.Write($"> {question} ");
             Thread.Sleep(delay * 1000);

@@ -58,7 +58,7 @@ public class Listing : Activity
 
         //Console.WriteLine("Enter responses (20 second timeout):");
         int num = Duration * 1000;
-        Console.WriteLine(Duration);
+        //Console.WriteLine(Duration);
         System.Timers.Timer timer = new System.Timers.Timer(num); // it is milisecends
         timer.Elapsed += (sender, e) => 
         { 
@@ -98,7 +98,8 @@ public class Listing : Activity
         timer.Stop();
         return _listResponse;
     }
-        public void StoreListResponse()
+    
+    public void StoreListResponse()
     {
         List<string> _listResponse = GetResponse(); // Here we start the GetResponse method
         // Count how many response are in the list and display the total

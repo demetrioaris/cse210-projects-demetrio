@@ -17,7 +17,7 @@ public class Breathing : Activity
     {
         // Display the activity breathe in and breath out
         int messageTime = 5; // 5 second by breath msg 
-        int numLoops = base.Duration / (2 * messageTime);
+        int numLoops = Duration / (2 * messageTime);
 
         string breatheIn = "Breathe in...";
         //string messageHold = "Hold...";
@@ -57,7 +57,7 @@ public class Breathing : Activity
         GetReadyMsg();
         DisplaySpinner();
         Console.WriteLine();
-
+        
         DisplayBreathinActivity();
 
         GetEndtMsg();
