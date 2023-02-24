@@ -20,7 +20,7 @@ public class Breathing : Activity
         int numLoops = Duration / (2 * messageTime);
 
         string breatheIn = "Breathe in...";
-        //string messageHold = "Hold...";
+        string messageHold = "Hold...";
         string breatheOut = "Now breathe out...";
         string[] messages = new string[numLoops * 3];
         for (int i = 0; i < numLoops; i++)
@@ -29,18 +29,18 @@ public class Breathing : Activity
             Console.Write(breatheIn);
             DisplayCountdown();
             Console.WriteLine();
-            /* display hold message and countdown
+            //display hold message and countdown
             Console.Write(messageHold);
             DisplayCountdown();
-            Console.WriteLine();*/
+            Console.WriteLine();
             // display end message and countdown
             Console.Write(breatheOut);
             DisplayCountdown();
             Console.WriteLine();
-            /* display hold message and countdown
+            //display hold message and countdown
             Console.Write(messageHold);
             DisplayCountdown();
-            Console.WriteLine();*/
+            Console.WriteLine();
             // add blank line
             Console.WriteLine(" ");
         }

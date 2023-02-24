@@ -101,7 +101,7 @@ public class Listing : Activity
     
     public void StoreListResponse()
     {
-        List<string> _listResponse = GetResponse(); // Here we start the GetResponse method
+        _listResponse = GetResponse(); // Here we start the GetResponse method
         // Count how many response are in the list and display the total
         int listCount = _listResponse.Count;
         Console.WriteLine();

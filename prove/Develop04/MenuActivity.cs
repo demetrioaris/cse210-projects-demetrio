@@ -52,6 +52,8 @@ public class MenuActivity
 
                 case "4":
                     Console.Clear();
+                    // Activity s1 = new Activity();
+                    // s1.StoreDuration();
                     Console.WriteLine("Bye!!! -- Have nice day");
                     Console.ReadLine();
                     break;

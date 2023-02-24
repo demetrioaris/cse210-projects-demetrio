@@ -16,10 +16,8 @@ public class Activity
         
     }
 
-    // public Activity(int duration)
-    // {
-    //     _duration = InputDuration();
-    // }
+    // public Activity()
+    // {}
 
     public int Duration { get { return _duration; }} // return 
     public string Name { get{ return _activityName;}}
@@ -165,4 +163,12 @@ public class Activity
             }
         }
     }
+
+    // public void StoreDuration()
+    // {
+    //     List<int> durationList = new List<int>();
+    //     durationList.Add(_duration);
+    //     int sum = durationList.Sum();
+    //     Console.WriteLine($"The total time you spent  {sum} sec");
+    // }
 }

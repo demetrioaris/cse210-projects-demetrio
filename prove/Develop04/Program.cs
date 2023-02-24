@@ -21,9 +21,11 @@ class Program
                     this value is stored in the contructor with paramete Duration, it's used to derivate class.
                 3. GetEndMsg() return a void, Display the End Message, where getter the Duration and Name.
             
-            Addinional methods to just display, DisplaySpinner() and DisplayCountdown() return void
+            Addinional methods to just display, DisplaySpinner() and DisplayCountdown()
 
-            For the spinner I can create a variable time to display diferent period of time
+            To show some creativity I did a loanding... message to to show when the program started, also with the Get Ready...
+            I add some extra message in the activity breathe, to improve it with a recomendation activity from therapist in relax and stress control, with the name square breathing
+
          */
          // Activity.DisplaySpinner();
         // Activity.DisplayCountdown();
