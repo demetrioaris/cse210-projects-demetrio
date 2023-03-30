@@ -35,14 +35,17 @@ class Program
         Console.WriteLine(order1.PackingLabel());
         Console.WriteLine("Shipping Label:");
         Console.WriteLine(order1.ShippingLabel());
+        Console.WriteLine();
         order1.TotalPrice();
         
         Console.WriteLine();
+
         Console.WriteLine("Order 2:");
         Console.WriteLine("Packing Label:");
         Console.WriteLine(order2.PackingLabel());
         Console.WriteLine("Shipping Label:");
         Console.WriteLine(order2.ShippingLabel());
+        Console.WriteLine();
         order2.TotalPrice();
     }
 }
