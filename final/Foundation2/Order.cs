@@ -29,7 +29,7 @@ public class Order
     }
     public void TotalPrice()
     {
-      decimal totalPrice = _product.Sum(product => product.GetPrice() * product.GetQuantity());
+        decimal totalPrice = _product.Sum(product => product.GetPrice() * product.GetQuantity());
 
         Console.WriteLine($"Sub Total: ${decimal.Round(totalPrice, 2)}");
 
