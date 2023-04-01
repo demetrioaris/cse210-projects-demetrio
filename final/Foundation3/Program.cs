@@ -40,19 +40,30 @@ class Program
 
         // Display the 3 types of messagge
         // Standard 
+        Console.WriteLine("This the Standard messagge");
         Console.WriteLine(e01.GetStandardMsg());
+        Console.WriteLine();
         Console.WriteLine(e02.GetStandardMsg());
+        Console.WriteLine();
         Console.WriteLine(e03.GetStandardMsg());
+        Console.WriteLine();
 
         // Full 
+        Console.WriteLine("This the Full messagge");
         Console.WriteLine(e01.GetFullMsg());
+        Console.WriteLine();
         Console.WriteLine(e02.GetFullMsg());
+        Console.WriteLine();
         Console.WriteLine(e03.GetFullMsg());
+        Console.WriteLine();
 
         // Short
+        Console.WriteLine("This the Short messagge");
         Console.WriteLine(e01.GetShortMsg());
+        Console.WriteLine();
         Console.WriteLine(e02.GetShortMsg());
+        Console.WriteLine();
         Console.WriteLine(e03.GetShortMsg());
-
+        Console.WriteLine();
     }
 }
