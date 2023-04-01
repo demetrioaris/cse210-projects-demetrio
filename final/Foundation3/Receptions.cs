@@ -7,7 +7,7 @@ public class Receptions : Event
     {
         _register = register;
     }
-    
+
     public string GetRegister()
     {
         return _register;
@@ -19,6 +19,6 @@ public class Receptions : Event
 
     public string GetReceptionsInformation()
     {
-        return $"Type of Event Receptions \nMake your registration: {_register}";
+        return $"\nType of Event Receptions \nMake your registration: {_register}";
     }
 }

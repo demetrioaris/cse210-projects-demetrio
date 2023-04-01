@@ -152,6 +152,6 @@ public class Event
     }
     public string GetShortMsg()
     {
-        return $"type of Event {GetTypeOfEvent()} \n {GetTitle()} \nDate of the Event: {GetDateEvent()}";
+        return $"type of Event {GetTypeOfEvent()} \n{GetTitle()} \nDate of the Event: {GetDateEvent()}";
     }
 }

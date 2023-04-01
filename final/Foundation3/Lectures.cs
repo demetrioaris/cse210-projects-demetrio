@@ -29,6 +29,6 @@ public class Lectures : Event
 
     public string GetLecturesInformation()
     {
-        return $"Type of Event Lectures \nMore information about the event \nSpeaker name: {_speaker}\nCapacity: {_capacity}";
+        return $"\nType of Event Lectures \nMore information about the event \nSpeaker name: {_speaker}\nCapacity: {_capacity}";
     }
 }

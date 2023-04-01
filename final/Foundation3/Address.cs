@@ -14,7 +14,7 @@ public class Address
         _stateOrProvince = stateOrProvince;
         _country = country;
     }
-    
+
     public string GetPlace()
     {
         return _place;
@@ -58,6 +58,6 @@ public class Address
     
     public string GetAddress()
     {
-        return $"Address:\nPlace: {_place},\n{_street},\n{_city} {_stateOrProvince},\n{_country}";
+        return $"\nAddress:\nPlace: {_place},\n{_street},\n{_city} {_stateOrProvince},\n{_country}";
     }
 }

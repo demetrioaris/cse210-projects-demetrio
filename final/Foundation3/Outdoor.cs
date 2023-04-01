@@ -16,9 +16,9 @@ public class Outdoor : Event
     {
         _weather = weather;
     }
-    
+
     public string GetOutdoorInformation()
     {
-        return $"\nWe have a day with a wather {_weather}";
+        return $"\nWe have a day with a {_weather} weather";
     }
 }
