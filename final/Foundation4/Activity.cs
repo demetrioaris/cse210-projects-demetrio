@@ -3,7 +3,6 @@ public class Activity
     private string _trackDate;
     private double _length;
     private double _distance;
-    
     public Activity(string trackDate, double length, double distance)
     {
         _trackDate = trackDate;
@@ -15,9 +14,7 @@ public class Activity
         _trackDate = trackDate;
         _length = length;
     }
-    public Activity()
-    {
-    }
+
     public string GetTrackDate()
     {
         return _trackDate;
