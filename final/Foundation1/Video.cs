@@ -4,6 +4,11 @@ public class Video
     public string _autor;
     public int _lengthSec;
     public List<Comment> _comments = new List<Comment>();
+
+    public void CommentCount()
+    {
+        Console.WriteLine($"Total Comments: {_comments.Count}");
+    }
     public void DisplayVideo()
     {
         Console.WriteLine($"Title: {_title}");
@@ -17,9 +22,5 @@ public class Video
             _comments[i].DisplayCommentList();
         }
         Console.WriteLine();
-    }
-    public void CommentCount()
-    {
-        Console.WriteLine($"Total Comments: {_comments.Count}");
     }
 }
