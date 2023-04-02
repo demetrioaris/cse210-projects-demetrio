@@ -3,12 +3,12 @@ public class Order
 {
     private List<Custumer> _custumer = new List<Custumer>();
     private List<Product> _product = new List<Product>();
-
     public Order(List<Custumer> custumer, List<Product> product)
     {
         _custumer = custumer;
         _product = product;
     }
+    
     public string PackingLabel()
     {
         string output = "";

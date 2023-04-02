@@ -4,20 +4,12 @@ public class Address
     private string _city;
     private string _stateOrProvince;
     private string _country;
-
     public Address(string street, string city, string stateOrProvince, string country)
     {
         _street = street;
         _city = city;
         _stateOrProvince = stateOrProvince;
         _country = country;
-    }
-    public Address(string country)
-    {
-        _country = country;
-    }
-    public Address()
-    {
     }
 
     public string GetStreet()
@@ -52,6 +44,7 @@ public class Address
     {
         _country = country;
     }
+    
     public string DisplayAddress()
     {
         return $"Address:\n{_street},\n{_city} {_stateOrProvince},\n{_country}";

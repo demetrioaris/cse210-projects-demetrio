@@ -12,6 +12,7 @@ public class Product
         _price = price;
         _quantity = quantity;
     }
+
     public string GetNameProduct()
     {
         return _nameProduct;
@@ -44,6 +45,7 @@ public class Product
     {
         _quantity = quantity;
     }
+    
     public string ProductPrice()
     {   
         decimal totalProducePrice = _quantity*_price;

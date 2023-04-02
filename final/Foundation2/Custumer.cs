@@ -2,14 +2,9 @@
 public class Custumer {
     private string _name;
     private List<Address> _address = new List<Address>();
-
     public Custumer(string name)
     {
         _name = name;
-    }
-
-    public Custumer()
-    {
     }
 
     public string GetName()
@@ -28,6 +23,7 @@ public class Custumer {
     {
         _address = address;
     }
+    
     public string DisplayCustumer()
     {
         string output = "";
