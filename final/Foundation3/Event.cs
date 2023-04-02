@@ -18,7 +18,7 @@ public class Event
         _typeOfEvent = typeOfEvent;
     }
     public Event(){}
-
+    //
     public string GetTitle() 
     {
         return _title;
